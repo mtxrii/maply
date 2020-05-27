@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Maply</title>
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:300,400,700">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Comfortaa">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pikaday/1.6.1/css/pikaday.min.css">
+    <link rel="stylesheet" href="dropdown.css">
+    <style>
+      /* Set the size of the div element that contains the map */
+      #map {
+        height: 400px;  /* The height is 400 pixels */
+        width: 100%;  /* The width is the width of the web page */
+       }
+    </style>
+  </head>
+  <body>
+    <!-- Header -->
+    <nav class="navbar navbar-dark navbar-expand fixed-top bg-white portfolio-navbar gradient">
+        <div class="container">
+            <h2 style="font-family: Comfortaa, cursive;">MAP</h2>
+            <h2 style="color: rgba(255,255,255,0.63);font-family: Comfortaa, cursive;">LY</h2>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="nav navbar-nav ml-auto"></ul>
+            </div><a class="btn btn-outline-primary" role="button" style="color: rgb(221, 221, 221);font-family: Lato, sans-serif;" href="https://edavalos.com/" target="_blank">@MTXRII</a></div>
+    </nav>
+
+    <!-- Buttons -->
+    <div style="margin-top: 100px">
+        <input class="" type="text" placeholder="ADDRESS / CITY" id="address">
+        <button class="dropbtn" style="cursor: pointer;" type="button" onclick="getInputValue();">FIND</button>
+
+        <div class="dropdown">
+            <button class="dropbtn">STYLE</button>
+            <div class="dropdown-content">
+              <a style="cursor: pointer;" onclick="setStyle('regular')">REGULAR</a>
+              <a style="cursor: pointer;" onclick="setStyle('dark')">DARK</a>
+              <a style="cursor: pointer;" onclick="setStyle('mango')">MANGO</a>
+              <a style="cursor: pointer;" onclick="setStyle('eggplant')">EGGPLANT</a>
+              <a style="cursor: pointer;" onclick="setStyle('whiteout')">WHITEOUT</a>
+              <a style="cursor: pointer;" onclick="setStyle('blackout')">BLACKOUT</a>
+              <a style="cursor: pointer;" onclick="setStyle('champagne')">CHAMPAGNE</a>
+            </div>
+        </div>
+
+        <button class="dropbtn" style="cursor: pointer; float: right;" type="button" onclick="saveMap();"
+                data-toggle="modal" data-target="#result">SAVE</button>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="result" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLongTitle">Map screenshot</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+            </div>
+            <div class="modal-body" id="save-src">
+            </div>
+            <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal" onclick="removeMap()">Close</button>
+            <button type="button" class="btn btn-primary" onclick="downloadMap()">Save</button>
+            </div>
+        </div>
+        </div>
+    </div>
+
+    
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pikaday/1.6.1/pikaday.min.js"></script>
+    <script src="assets/js/script.min.js"></script>
+    <script src="html2canvas.min.js"></script>
+
+    <!--The div element for the map -->
+    <div id="map"></div>
+    <script src="styles.js"></script>
+    <script src="map.js"></script>
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBrTUWfnhd2LXtH2OyV1C0g3uwAFa9DceQ&callback=initMap">
+    </script>
+  </body>
+</html>
