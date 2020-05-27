@@ -1,3 +1,5 @@
+const API_KEY = "<your geocode api key here>";
+
 let style = styleArrays.REGULAR;
 
 let modal = document.getElementById("save-src");
@@ -10,7 +12,7 @@ let found = true;
 function locateJSON(address) {
     const serialized = address.replace(" ", "+");
 
-    fetch('https://maps.googleapis.com/maps/api/geocode/json?address='+serialized+'&key=AIzaSyBrTUWfnhd2LXtH2OyV1C0g3uwAFa9DceQ')
+    fetch('https://maps.googleapis.com/maps/api/geocode/json?address='+serialized+'&key=' + API_KEY)
     .then(response => {
         return response.json()
     })
